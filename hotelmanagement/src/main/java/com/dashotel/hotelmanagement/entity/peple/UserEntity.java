@@ -1,0 +1,25 @@
+package com.dashotel.hotelmanagement.entity.peple;
+
+import com.dashotel.hotelmanagement.entity.AbstractEntity;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+
+
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@MappedSuperclass
+@Data
+public class UserEntity extends AbstractEntity {
+
+    String name;
+
+    String email;
+
+    String phone;
+
+    String imgUrl;
+}
