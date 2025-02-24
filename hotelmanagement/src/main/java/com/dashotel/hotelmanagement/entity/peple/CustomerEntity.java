@@ -1,5 +1,6 @@
 package com.dashotel.hotelmanagement.entity.peple;
 
+import com.dashotel.hotelmanagement.entity.account.AccountEntity;
 import com.dashotel.hotelmanagement.entity.account.SocialAccount;
 import com.dashotel.hotelmanagement.entity.booking.BookingEntity;
 import com.dashotel.hotelmanagement.entity.review.ReviewEntity;
@@ -28,5 +29,9 @@ public class CustomerEntity extends UserEntity {
 
     @OneToOne(mappedBy = "customer")
     SocialAccount socialAccount;
+
+    @OneToOne
+    @JoinColumn(name = "account_id")
+    AccountEntity account;
 
 }
