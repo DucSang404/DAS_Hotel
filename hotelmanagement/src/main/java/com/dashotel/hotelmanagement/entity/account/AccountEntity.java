@@ -5,6 +5,8 @@ import com.dashotel.hotelmanagement.entity.peple.AdminEntity;
 import com.dashotel.hotelmanagement.entity.peple.CustomerEntity;
 import com.dashotel.hotelmanagement.entity.peple.OwnerEntity;
 import com.dashotel.hotelmanagement.enums.AccountStatusEnum;
+import com.dashotel.hotelmanagement.enums.RoleAccountEnum;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -22,16 +24,17 @@ import lombok.experimental.SuperBuilder;
 public class AccountEntity extends AbstractEntity {
     String username;
     String password;
-    String role;
+    RoleAccountEnum role;
     AccountStatusEnum status;
+    String email;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account",cascade = CascadeType.ALL)
     AdminEntity admin;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account",cascade = CascadeType.ALL)
     CustomerEntity customer;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
     OwnerEntity owner;
 
 }

@@ -8,6 +8,7 @@ import lombok.experimental.FieldDefaults;
 
 
 @Entity
+@Data
 @Table(name = "owner")
 public class OwnerEntity extends UserEntity {
     @OneToOne

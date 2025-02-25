@@ -17,8 +17,6 @@ public class UserEntity extends AbstractEntity {
 
     String name;
 
-    String email;
-
     String phone;
 
     String imgUrl;
